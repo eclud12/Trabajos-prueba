@@ -21,7 +21,7 @@ Route::group(['prefix'=>'api'], function(){
 });
 
 Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('inmueble', 'Inmueble');
+    Route::apiResource('inmuebles', 'Inmuebles');
   //  Route::apiResource('alumno', 'controllerAlumnos@store');
 });
 
