@@ -3,17 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Inmuebles;
+
+use App\Http\Requests\Inmuebles as InmueblesRequests;
 
 class Inmuebles extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $inmuebles;
+    
+    public function __construct (Inmuebles $inmuebles){
+        $this-$inmuebles =$inmuebles;
+    }
+
+
     public function index()
     {
         //
+        $inmuebles = Inmuebles::all();
+        
+        //retorna el array en formato json
+     return response()->json(['detalle'=> $inmuebles]);
+        return $inmuebles;
     }
 
     /**
@@ -32,9 +42,15 @@ class Inmuebles extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InmueblesRequests $request)
     {
         //
+      //  return $request;
+        $inmuebles =$this->inmuebles->create($request->all());
+
+        return response()->json($inmuebles); 
+       // return $materia;
+      //  return response()->json(new MateriasS($materia), 201);
     }
 
     /**
@@ -45,7 +61,8 @@ class Inmuebles extends Controller
      */
     public function show($id)
     {
-        //
+        $inmuebles = Inmuebles::find($id);
+        return $inmuebles;
     }
 
     /**
@@ -66,9 +83,15 @@ class Inmuebles extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(InmueblesRequests $request,Inmuebles $inmuebles)
     {
         //
+        //return $request;
+        $inmuebles->update($request->all());
+
+        return response()->json($inmuebles);
+
+       // return response()->json(new MateriaRequests($post));
     }
 
     /**
@@ -77,8 +100,11 @@ class Inmuebles extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Inmuebles $inmuebles)
     {
         //
+
+        $inmuebles ->delete();
+        return response()->json('Eliminacion');
     }
 }

@@ -3,17 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Municipios;
+
+use App\Http\Requests\Municipios as MunicipiosRequests;
 
 class Municipios extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $municipios;
+    
+    public function __construct (Municipios $municipios){
+        $this-$municipios =$municipios;
+    }
+
+
     public function index()
     {
         //
+        $municipios =Municipios::all();
+        
+        //retorna el array en formato json
+     return response()->json(['detalle'=> $municipios]);
+        return $municipios;
     }
 
     /**
@@ -32,9 +42,15 @@ class Municipios extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MunicipiosRequests $request)
     {
         //
+      //  return $request;
+        $municipios =$this->municipios->create($request->all());
+
+        return response()->json($municipios); 
+       // return $materia;
+      //  return response()->json(new MateriasS($materia), 201);
     }
 
     /**
@@ -45,7 +61,8 @@ class Municipios extends Controller
      */
     public function show($id)
     {
-        //
+        $municipios = Municipios::find($id);
+        return $municipios;
     }
 
     /**
@@ -66,9 +83,15 @@ class Municipios extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MunicipiosRequests $request, Municipios $municipios)
     {
         //
+        //return $request;
+        $municipios->update($request->all());
+
+        return response()->json($municipios);
+
+       // return response()->json(new MateriaRequests($post));
     }
 
     /**
@@ -77,8 +100,11 @@ class Municipios extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Municipios $municipios)
     {
         //
+
+        $municipios ->delete();
+        return response()->json('Eliminacion');
     }
 }

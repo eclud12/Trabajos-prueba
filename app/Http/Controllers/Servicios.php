@@ -3,17 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Servicios;
+
+use App\Http\Requests\Servicios as  ServiciosRequests;
 
 class Servicios extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $servicios;
+    
+    public function __construct (Servicios $servicios){
+        $this-$servicios =$servicios;
+    }
+
+
     public function index()
     {
         //
+        $servicios = Servicios::all();
+        
+        //retorna el array en formato json
+     return response()->json(['detalle'=> $servicios]);
+        return $servicios;
     }
 
     /**
@@ -32,9 +42,15 @@ class Servicios extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ServiciosRequests $request)
     {
         //
+      //  return $request;
+        $servicios =$this->servicios->create($request->all());
+
+        return response()->json($servicios); 
+       // return $materia;
+      //  return response()->json(new MateriasS($materia), 201);
     }
 
     /**
@@ -45,7 +61,8 @@ class Servicios extends Controller
      */
     public function show($id)
     {
-        //
+        $servicios = Servicios::find($id);
+        return $servicios;
     }
 
     /**
@@ -66,9 +83,15 @@ class Servicios extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ServiciosRequests $request, Servicios $servicios)
     {
         //
+        //return $request;
+        $servicios->update($request->all());
+
+        return response()->json($servicios);
+
+       // return response()->json(new MateriaRequests($post));
     }
 
     /**
@@ -77,8 +100,11 @@ class Servicios extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Servicios $servicios)
     {
         //
+
+        $servicios ->delete();
+        return response()->json('Eliminacion');
     }
 }
