@@ -14,3 +14,38 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('user', 'User');
+  //  Route::apiResource('alumno', 'controllerAlumnos@store');
+});
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('inmueble', 'Inmueble');
+  //  Route::apiResource('alumno', 'controllerAlumnos@store');
+});
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('ventas', 'Ventas');
+  //  Route::apiResource('alumno', 'controllerAlumnos@store');
+});
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('estados', 'Estados');
+  //  Route::apiResource('alumno', 'controllerAlumnos@store');
+});
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('municipios', 'Municipios');
+  //  Route::apiResource('alumno', 'controllerAlumnos@store');
+});
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('inmuebleservicios', 'Inmuebleservicios');
+  //  Route::apiResource('alumno', 'controllerAlumnos@store');
+});
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('servicios', 'Servicios');
+  //  Route::apiResource('alumno', 'controllerAlumnos@store');
+});
