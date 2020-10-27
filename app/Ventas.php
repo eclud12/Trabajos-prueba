@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\User;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -30,7 +31,7 @@ class Ventas extends Model
 
      public function Ventas()
     {
-        return $this->hasMany(Ventas::class);
+        return $this->hasMany(User::class);
     }
 
 }
