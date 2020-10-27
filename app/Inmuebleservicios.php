@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Inmuebleservicios extends Model
 {
@@ -18,4 +19,14 @@ class Inmuebleservicios extends Model
             'idservicio'  =>'nullable| min:5 |max:50',
         ];
     }
+
+    Use SoftDeletes;
+    protected $table = 'inmuebleservicios';
+
+    public function Inmuebleserevcios()
+    {
+        return $this->hasMany(Servicios::class);
+        return $this->hasMany(Inmuebles::class);
+    }
+
 }
