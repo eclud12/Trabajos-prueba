@@ -22,7 +22,7 @@ class UserController extends Controller
             $user = User::all();
             
             //retorna el array en formato json
-         return response()->json(['User'=> $user]);
+         return response()->json(['Usuarios'=> $user]);
             return $user;
         }
     
