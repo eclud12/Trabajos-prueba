@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Servicios extends Model
 {
@@ -24,4 +25,13 @@ class Servicios extends Model
             'gas'  =>'requeried| min:5 |max:50',
         ];
     }
+
+    Use SoftDeletes;
+    protected $table = 'servicios';
+
+    public function Servicios()
+    {
+        return $this->hasOne(Servicios::class);
+    }
+
 }

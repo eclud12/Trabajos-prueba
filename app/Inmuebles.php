@@ -1,8 +1,12 @@
 <?php
 
 namespace App;
+use App\Inmuebleservicios;
+use App\Municipios;
+use App\Estados;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Inmuebles extends Model
 {
@@ -25,5 +29,17 @@ class Inmuebles extends Model
             'oficina'  =>'requeried| min:5 |max:50',
             'terreno' =>'requeried| min:1 |max:32',
         ];
+    }
+
+     Use SoftDeletes;
+     protected $table = 'inmuebles';
+
+    public function Inmuebles()
+    {
+        return $this->hasMany(Inmuebleservicios::class);
+        return $this->hasMany(Municipios::class);
+        return $this->hasMany(Estados::class);
+
+        return $this->hasOne(Inmuebles::class);
     }
 }

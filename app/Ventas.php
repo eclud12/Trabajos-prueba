@@ -1,8 +1,10 @@
 <?php
 
 namespace App;
+use App\User;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Ventas extends Model
 {
@@ -24,4 +26,12 @@ class Ventas extends Model
             'forma_de_pago'  =>'requeried| min:5 |max:50',
         ];
     }
+    Use SoftDeletes;
+    protected $table = 'ventas';
+
+     public function Ventas()
+    {
+        return $this->hasMany(User::class);
+    }
+
 }

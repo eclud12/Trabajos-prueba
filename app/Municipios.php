@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Municipios extends Model
 {
@@ -18,4 +19,13 @@ class Municipios extends Model
             'municipio'  =>'requeried| min:5 |max:50',
         ];
     }
+
+    Use SoftDeletes;
+    protected $table = 'municipios';
+
+    public function Municipios()
+    {
+        return $this->hasOne(Municipios::class);
+    }
+
 }

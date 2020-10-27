@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Ruse App\Inmuebles;equest;
 use App\Inmuebles;
 
 use App\Http\Requests\Inmuebles as InmueblesRequests;
