@@ -12,7 +12,7 @@ class UserController extends Controller
         protected $user;
     
         public function __construct (User $user){
-            $this-$user =$user;
+            $this->$user =$user;
         }
     
     
@@ -22,7 +22,7 @@ class UserController extends Controller
             $user = User::all();
             
             //retorna el array en formato json
-         return response()->json(['user'=> $user]);
+         return response()->json(['User'=> $user]);
             return $user;
         }
     
@@ -59,9 +59,9 @@ class UserController extends Controller
          * @param  int  $id
          * @return \Illuminate\Http\Response
          */
-        public function show($id)
+        public function show($idusers)
         {
-            $user = User::find($id);
+            $user = User::find($idusers);
             return $user;
         }
     

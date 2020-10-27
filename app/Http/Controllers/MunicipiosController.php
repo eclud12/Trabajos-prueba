@@ -12,7 +12,7 @@ class MunicipiosController extends Controller
     protected $municipios;
     
     public function __construct (Municipios $municipios){
-        $this-$municipios =$municipios;
+        $this->$municipios =$municipios;
     }
 
 
@@ -22,7 +22,7 @@ class MunicipiosController extends Controller
         $municipios =Municipios::all();
         
         //retorna el array en formato json
-     return response()->json(['detalle'=> $municipios]);
+     return response()->json(['Municipios'=> $municipios]);
         return $municipios;
     }
 

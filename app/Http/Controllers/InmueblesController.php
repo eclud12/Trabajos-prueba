@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Ruse App\Inmuebles;equest;
+use Illuminate\Http\Request;
 use App\Inmuebles;
 
 use App\Http\Requests\Inmuebles as InmueblesRequests;
@@ -12,7 +12,7 @@ class InmueblesController extends Controller
     protected $inmuebles;
     
     public function __construct (Inmuebles $inmuebles){
-        $this-$inmuebles =$inmuebles;
+        $this->$inmuebles =$inmuebles;
     }
 
 
@@ -22,7 +22,7 @@ class InmueblesController extends Controller
         $inmuebles = Inmuebles::all();
         
         //retorna el array en formato json
-     return response()->json(['detalle'=> $inmuebles]);
+     return response()->json(['Inmuebles'=> $inmuebles]);
         return $inmuebles;
     }
 

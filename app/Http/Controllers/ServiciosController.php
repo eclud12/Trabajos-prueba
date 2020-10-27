@@ -12,7 +12,7 @@ class ServiciosController extends Controller
     protected $servicios;
     
     public function __construct (Servicios $servicios){
-        $this-$servicios =$servicios;
+        $this->$servicios =$servicios;
     }
 
 
@@ -22,7 +22,7 @@ class ServiciosController extends Controller
         $servicios = Servicios::all();
         
         //retorna el array en formato json
-     return response()->json(['detalle'=> $servicios]);
+     return response()->json(['Servicios'=> $servicios]);
         return $servicios;
     }
 

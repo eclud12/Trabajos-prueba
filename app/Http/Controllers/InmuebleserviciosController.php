@@ -12,7 +12,7 @@ class InmuebleserviciosController extends Controller
     protected $inmuebleservicios;
     
         public function __construct (Inmuebleservicios $inmuebleservicios){
-            $this-$inmuebleservicios =$inmuebleservicios;
+            $this->$inmuebleservicios =$inmuebleservicios;
         }
     
     
@@ -22,7 +22,7 @@ class InmuebleserviciosController extends Controller
             $inmuebleservicios = Inmuebleservicios::all();
             
             //retorna el array en formato json
-         return response()->json(['detalle'=> $inmuebleservicios]);
+         return response()->json(['Inmueble Servicio'=> $inmuebleservicios]);
             return $inmuebleservicios;
         }
     

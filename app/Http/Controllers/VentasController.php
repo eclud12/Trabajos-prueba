@@ -12,7 +12,7 @@ class VentasController extends Controller
     protected $ventas;
     
         public function __construct (Ventas $ventas){
-            $this-$ventas =$ventas;
+            $this->$ventas =$ventas;
         }
     
     

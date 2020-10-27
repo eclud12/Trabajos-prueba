@@ -13,7 +13,7 @@ class EstadosController extends Controller
     protected $estados;
     
         public function __construct (Estados $estados){
-            $this-$estados =$estados;
+            $this->estados =$estados;
         }
     
     
@@ -23,7 +23,7 @@ class EstadosController extends Controller
             $estados = Estados::all();
             
             //retorna el array en formato json
-         return response()->json(['detalle'=> $estados]);
+         return response()->json(['Estados'=> $estados]);
             return $estados;
         }
     
@@ -50,8 +50,8 @@ class EstadosController extends Controller
             $estados =$this->estados->create($request->all());
     
             return response()->json($estados); 
-           // return $materia;
-          //  return response()->json(new MateriasS($materia), 201);
+           // return $estados;
+          //  return response()->json(new Estado($estado), 201);
         }
     
         /**
@@ -81,7 +81,7 @@ class EstadosController extends Controller
          * Update the specified resource in storage.
          *
          * @param  \Illuminate\Http\Request  $request
-         * @param  int  $id
+         * @param  int  $idestado
          * @return \Illuminate\Http\Response
          */
         public function update(EstadosRequests $request, Estados $estados)
