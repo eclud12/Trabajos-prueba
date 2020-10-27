@@ -16,36 +16,36 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('user', 'User');
+    Route::apiResource('user', 'UserController');
   //  Route::apiResource('alumno', 'controllerAlumnos@store');
 });
 
 Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('inmuebles', 'Inmuebles');
+    Route::apiResource('inmuebles', 'InmueblesController');
   //  Route::apiResource('alumno', 'controllerAlumnos@store');
 });
 
 Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('ventas', 'Ventas');
+    Route::apiResource('ventas', 'VentasController');
   //  Route::apiResource('alumno', 'controllerAlumnos@store');
 });
 
 Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('estados', 'Estados');
+    Route::apiResource('estados', 'EstadosController');
   //  Route::apiResource('alumno', 'controllerAlumnos@store');
 });
 
 Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('municipios', 'Municipios');
+    Route::apiResource('municipios', 'MunicipiosController');
   //  Route::apiResource('alumno', 'controllerAlumnos@store');
 });
 
 Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('inmuebleservicios', 'Inmuebleservicios');
+    Route::apiResource('inmuebleservicios', 'InmuebleserviciosController');
   //  Route::apiResource('alumno', 'controllerAlumnos@store');
 });
 
 Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('servicios', 'Servicios');
+    Route::apiResource('servicios', 'ServiciosController');
   //  Route::apiResource('alumno', 'controllerAlumnos@store');
 });
