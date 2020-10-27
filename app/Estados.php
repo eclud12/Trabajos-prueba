@@ -26,5 +26,4 @@ class Estados extends Model
         return $this->hasOne(Estados::class);
     }
 
-}
- 
+  }

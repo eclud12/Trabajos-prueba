@@ -25,7 +25,7 @@ class Estados extends FormRequest
     {
         return [
             //
-            'estado'=>'required'
+            'estados'=>'required'
         ];
     }
 }
