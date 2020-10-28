@@ -18,12 +18,6 @@ class Estados extends Model
         ];
     }
 
-    Use SoftDeletes;
-    protected $table = 'estados';
-
-    public function Estados()
-    {
-        return $this->hasOne(Estados::class);
-    }
+   
 
   }

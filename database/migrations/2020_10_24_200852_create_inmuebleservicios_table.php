@@ -15,9 +15,9 @@ class CreateInmuebleserviciosTable extends Migration
     {
         Schema::create('inmuebleservicios', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('inmuebles_id');
+            $table->integer('inmuebles_id')->unsigned();
             $table->foreign('inmuebles_id')->references('inmuebles_id')->on('inmuebles');
-            $table->unsignedBigInteger('servicios_id');
+            $table->integer('servicios_id')->unsigned();
             $table->foreign('servicios_id')->references('servicios_id')->on('servicios');
             $table->timestamps();
         });

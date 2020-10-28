@@ -19,12 +19,13 @@ class CreateInmueblesTable extends Migration
             $table->string('departamento',30);
             $table->string('oficina',30);
             $table->string('terreno',30);
-            $table->integer('estados_id');
+            $table->unsignedBigInteger('estados_id');
             $table->foreign('estados_id')->references('estados_id')->on('estados');
-            $table->integer('municipios_id');
+            $table->unsignedBigInteger('municipios_id');
             $table->foreign('municipios_id')->references('municipios_id')->on('municipios');
             $table->timestamps();
         });
+
     }
 
     /**
