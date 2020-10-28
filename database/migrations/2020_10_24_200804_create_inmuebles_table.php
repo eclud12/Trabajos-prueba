@@ -14,15 +14,15 @@ class CreateInmueblesTable extends Migration
     public function up()
     {
         Schema::create('inmuebles', function (Blueprint $table) {
-            $table->bigIncrements('idinmueble');
+            $table->Increments('id');
             $table->string('casa',30);
             $table->string('departamento',30);
             $table->string('oficina',30);
             $table->string('terreno',30);
-            $table->unsignedBigInteger('idestado');
-            $table->foreign('idestado')->references('idestado')->on('estados');
-            $table->unsignedBigInteger('idmunicipio');
-            $table->foreign('idmunicipio')->references('idmunicipio')->on('municipios');
+            $table->integer('estados_id');
+            $table->foreign('estados_id')->references('estados_id')->on('estados');
+            $table->integer('municipios_id');
+            $table->foreign('municipios_id')->references('municipios_id')->on('municipios');
             $table->timestamps();
         });
     }
