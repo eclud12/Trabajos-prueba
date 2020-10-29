@@ -17,7 +17,11 @@ class Estados extends Model
             'estado' =>'requeried| min:5 |max:50',
         ];
     }
+    Use SoftDeletes;
+    protected $table = 'estados';
 
-   
-
+    public function Estado ()
+    {
+        return $this->hasMany(Municipios::class);
+    }
   }

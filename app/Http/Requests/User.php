@@ -29,7 +29,7 @@ class User extends FormRequest
             'primer_apellido'=>'required',
             'segundo_apellido'=>'required',
             'numero_celular'=>'required',
-            'correot'=>'required',
+            'correo'=>'required',
             'correo_verified_at'=>'required',
             'contraseña'=>'required'
         ];
