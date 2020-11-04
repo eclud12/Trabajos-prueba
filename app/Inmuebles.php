@@ -42,4 +42,19 @@ class Inmuebles extends Model
 
         return $this->hasOne(Inmuebles::class);
     }
+    public function Inmuebleservicios()
+    {
+        return $this->hasMany(Inmuebleservicios::class);
+
+    }
+    public function Municipios()
+    {
+        return $this->hasMany(Municipios::class);
+    }
+
+    public function Estados()
+    {
+        return $this->hasMany(Estados::class);
+    }
+
 }

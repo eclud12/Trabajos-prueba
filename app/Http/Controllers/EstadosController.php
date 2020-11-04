@@ -46,10 +46,10 @@ class EstadosController extends Controller
         public function store(EstadosRequests $request)
         {
             //
-          //  return $request;
-            $estados =$this->estados->create($request->all());
+          return $request;
+            $estado =$this->estado->create($request->all());
     
-            return response()->json($estados); 
+            return response()->json($estado); 
            // return $estados;
           //  return response()->json(new Estado($estado), 201);
         }
