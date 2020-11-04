@@ -15,30 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('user', 'UserController');
-});
 
-Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('inmuebles', 'InmueblesController');
-});
-
-Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('ventas', 'VentasController');
-});
-
-Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('estados', 'EstadosController');
-});
-
-Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('municipios', 'MunicipiosController');
-});
-
-Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('inmuebleservicios', 'InmuebleserviciosController');
-});
-
-Route::group(['prefix'=>'api'], function(){
-    Route::apiResource('servicios', 'ServiciosController');
+Route::get('index', function(){
+    return view('proyecto/index');
 });
